@@ -20,6 +20,6 @@ Dodaje szacowany czas czytania do stron postów.
 słów na minutę, według której algorytm liczy czas. Domyślna wartość to **255**.
 
 ```html
-<script src="https://deszczak.github.io/bearblog-plugins/reading-time.js" defer></script>
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
 ```
 *Zmodyfikowany kod autorstwa [Froodooo](tab:https://github.com/Froodooo/bear-plugins)*
