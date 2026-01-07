@@ -28,3 +28,24 @@ słów na minutę, według której algorytm liczy czas. Domyślna wartość to *
 <script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
 ```
 *Zmodyfikowany kod autorstwa [Froodooo](https://github.com/Froodooo/bear-plugins)*
+
+<details>
+<summary>
+Przykładowe stylowanie:
+</summary>
+
+```css
+.post main p:has(time) {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: 2.5rem;
+
+  .reading-time {
+    font-style: normal;
+    opacity: .7;
+  }
+}
+```
+
+</details>
