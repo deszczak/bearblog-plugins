@@ -27,4 +27,4 @@ słów na minutę, według której algorytm liczy czas. Domyślna wartość to *
 <!-- szacowany czas czytania -->
 <script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
 ```
-*Zmodyfikowany kod autorstwa [Froodooo](tab:https://github.com/Froodooo/bear-plugins)*
+*Zmodyfikowany kod autorstwa [Froodooo](https://github.com/Froodooo/bear-plugins)*
