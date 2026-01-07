@@ -2,6 +2,10 @@
 Nieoficjalne pluginy dla bearblog.dev dostosowane do języka polskiego.  
 *Unofficial plugins for bearblog.dev tailored to Polish language.*
 
+Przygotowane przez [**Daniela**](https://ato.yt) dla wszystkich użytkowników
+[bearblog](https://bearblog.dev).  
+*Dodatkowe atrybucje i inspiracje podane przy odpowiednich pluginach.*
+
 ## Jak używać?
 Aby dodać plugin do swojego bloga, należy:
 1. Skopiować wybrany skrypt
@@ -20,6 +24,7 @@ Dodaje szacowany czas czytania do stron postów.
 słów na minutę, według której algorytm liczy czas. Domyślna wartość to **255**.
 
 ```html
+<!-- szacowany czas czytania -->
 <script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
 ```
 *Zmodyfikowany kod autorstwa [Froodooo](tab:https://github.com/Froodooo/bear-plugins)*
