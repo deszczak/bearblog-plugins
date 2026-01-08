@@ -3,13 +3,11 @@
 
   const btn = document.getElementById('go-top')
   if (!btn) return
-  const updateBtn = () => {
+  const fraction = parseInt(document.currentScript.getAttribute("data-fraction"))
+  document.addEventListener('scroll', () => {
     const scrolled = document.documentElement.scrollTop
     const bodySize = document.body.scrollHeight
-    btn.classList.toggle('active', scrolled > bodySize
-      / parseInt(document.currentScript.getAttribute("data-fraction") ?? 5)
-    )
-  }
-  document.addEventListener('scroll', updateBtn)
+    btn.classList.toggle('active', scrolled > bodySize/ fraction ?? 5)
+  })
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
 })()
