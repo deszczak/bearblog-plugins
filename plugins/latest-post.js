@@ -3,6 +3,7 @@
 
   const el = document.querySelectorAll(".latest-post")[0]
   if (!el) return
+  el.style.setProperty('--opacity', 0)
 
   const diffInMs = new Date(el.querySelector("time").dateTime) - new Date()
   const diffInMins = Math.round(diffInMs / 6e4)
@@ -22,11 +23,9 @@
     timeString = 'wczoraj'
   } else { timeString = rtf.format(diffInDays, 'day') }
 
-  el.replaceWith(Object.assign(document.createElement("p"), {
-    className: "latest-post", innerHTML: `
-      ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
-      <strong>${timeString}</strong>:
-      <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
-    `
-  }))
+  el.innerHTML = `<p>
+    ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
+    <strong>${timeString}</strong>:
+    <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
+  </p>`
 })()
