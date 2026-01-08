@@ -1,7 +1,7 @@
-(function() {
+(() => {
   'use strict'
 
-  if (document.querySelector("body").classList.contains("post")) {
+  if (document.body.classList.contains("post")) {
     const time = Math.ceil(
       document.querySelector("main").innerText.trim().split(/\s+/).length
       / parseInt(document.currentScript.getAttribute("data-wpm") ?? 255)
