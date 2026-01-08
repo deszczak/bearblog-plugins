@@ -51,27 +51,3 @@ Przykładowe stylowanie:
 ```
 
 </details>
-
-### 2. Kiedy był ostatni wpis
-Informuje czytelnie o tym, kiedy pojawił się ostatni wpis na blogu.
-
-#### Przykłady wyświetlania
-- Najnowszy wpis pojawił się **3 dni temu**: [Tytuł wpisu](https://ato.yt)
-- Ostatni wpis był opublikowany **16 minut temu**: [Tytuł wpisu](https://ato.yt/now)
-- Zapostowałam **przed chwilą**: [Tytuł wpisu](https://linkedin.com/in/leszczak)
-- 📰 ⏰ 🤷🏻‍♂️ **wczoraj**: [Tytuł wpisu](https://github.com/deszczak)
-
-**Miejsce wyświetlenia:** Gdziekolwiek umieścimy poniższy fragment HTML.
-```html
-<div class="latest-post">{{posts|limit:1}}</div>
-<!-- lub -->
-<div class="latest-post" data-pre="dodaj-swój-tekst">{{posts|limit:1}}</div>
-```
-**Klasa do stylowania:** `latest-post`  
-**Tekst "przed":** Opcjonalny atrybut elementu `data-pre` pozwala ustawić tekst wyświetlający się
-przed odliczaniem od ostatniej publikacji. Domyślnie: **Najnowszy wpis pojawił się**.
-
-```html
-<!-- SKRYPT: kiedy był ostatni wpis -->
-<script src="https://deszczak.github.io/bearblog-plugins/plugins/latest-post.js" defer></script>
-```
