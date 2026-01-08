@@ -10,7 +10,7 @@
   const diffInDays = Math.round(diffInMs / 864e5)
 
   const rtf = new Intl.RelativeTimeFormat('pl-PL', { numeric: 'auto' })
-  let timeString = ''
+  let timeString
 
   if (Math.abs(diffInMins) < 15) {
     timeString = 'przed chwilą'
@@ -20,15 +20,16 @@
     timeString = Math.abs(diffInHours) === 1 ? 'godzinę temu' : rtf.format(diffInHours, 'hour')
   } else if (Math.abs(diffInHours) <= 48) {
     timeString = 'wczoraj'
-  } else {
-    timeString = rtf.format(diffInDays, 'day')
-  }
+  } else { timeString = rtf.format(diffInDays, 'day') }
 
-  el.outerHTML = `
-    <p class="latest-post">
-      ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
-      <strong>${timeString}</strong>:
-      <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
-    </p>
-  `
+  el.replaceWith(document.body.appendChild(
+    Object.assign(document.createElement("p"), {
+      className: "latest-post",
+      innerHTML: `
+        ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
+        <strong>${timeString}</strong>:
+        <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
+      `
+    })
+  ))
 })()
