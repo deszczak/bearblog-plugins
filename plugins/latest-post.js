@@ -22,14 +22,11 @@
     timeString = 'wczoraj'
   } else { timeString = rtf.format(diffInDays, 'day') }
 
-  el.replaceWith(document.body.appendChild(
-    Object.assign(document.createElement("p"), {
-      className: "latest-post",
-      innerHTML: `
-        ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
-        <strong>${timeString}</strong>:
-        <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
-      `
-    })
-  ))
+  el.replaceWith(Object.assign(document.createElement("p"), {
+    className: "latest-post", innerHTML: `
+      ${el.getAttribute("data-pre") ?? 'Najnowszy wpis pojawił się'}
+      <strong>${timeString}</strong>:
+      <a href="${el.querySelector("a").href}">${el.querySelector("a").textContent}</a>
+    `
+  }))
 })()
