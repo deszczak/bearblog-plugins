@@ -19,7 +19,7 @@ Aby dodać plugin do swojego bloga, należy:
 Dodaje szacowany czas czytania do stron postów.
 
 **Miejsce wyświetlenia:** W pierwszym `<p>` pod tytułem, obok `<i>` daty publikacji.  
-**Klasa do stylowania:** `reading-time`  
+**Selektor do stylowania:** `.reading-time`  
 **Kalibracja algorytmu:** Opcjonalny atrybut skryptu `data-wpm` pozwala ustawić liczbę
 słów na minutę, według której algorytm liczy czas. Domyślna wartość to: **255**.
 
@@ -47,6 +47,46 @@ Przykładowe stylowanie:
     font-style: normal;
     opacity: .7;
   }
+}
+```
+
+</details>
+
+### 2. Przycisk "Wróć do góry"
+Dodaje funkcję dynamicznego przycisku powrotu do góry strony.
+
+**Miejsce wyświetlenia:** Na każdej stronie, gdzie umieścimy element z id `go-top`.
+Zalecane jest jednorazowe dodanie do **Footer directive**, by był dostępny wszędzie.  
+**Selektor do stylowania:** `#go-top`  
+**Kalibracja wyświetlania:** Opcjonalny atrybut skryptu `data-fraction` pozwala ustawić liczbę
+ułamka, jaką użytkownik musi przebyć, by przycisk otrzymał klasę `active`. Domyślna wartość to: **5**
+– użytkownik musi zjechać o 1/5 długości strony.
+
+```html
+<!-- ELEMENT: np. button do dodania w "Footer directive" -->
+<button id="go-top">up</button>
+
+<!-- SKRYPT: wróć do góry -->
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.js" defer></script>
+<!-- lub -->
+<script data-fraction="2" src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.js" defer></script>
+```
+
+<details>
+<summary>
+Przykładowe stylowanie:
+</summary>
+
+```css
+button#go-top {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  height: 3rem; width: 3rem;
+  opacity: 1;
+  transition: opacity .2s;
+
+  &:not(.active) { opacity: 0; pointer-events: none }
+  @media (width < 640px) { bottom: 1rem; right: 1rem }
 }
 ```
 
