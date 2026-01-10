@@ -11,9 +11,9 @@
   document.querySelector("main p:first-of-type").append(
     document.body.appendChild(
       Object.assign(document.createElement("i"), {
+        id: "reading-time",
         title: "Szacowany czas czytania:",
         ariaLabel: "Szacowany czas czytania:",
-        className: "reading-time",
         innerHTML: time < 1 ? "<1 minuta" : `${time} ${plForms[pr.select(time)]}`
       })
     )
