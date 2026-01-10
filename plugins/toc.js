@@ -34,8 +34,6 @@
   })
 
   document.addEventListener("click", e => {
-    const shouldClose = !e.target.closest('#table-of-contents') && e.target !== toc
-    if (isOpen && shouldClose) toc.classList.remove("open")
-    console.log(e.target)
+    if (!e.target.closest('#table-of-contents')) toc.classList.remove("open")
   })
 })()
