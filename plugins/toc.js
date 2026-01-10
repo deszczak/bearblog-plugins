@@ -9,7 +9,7 @@
     <div id="toc-content">
       <h2>Spis treści</h2>
       <ol>
-      <li><a href="#">Start</a></li>
+      <li><a href="#">Początek</a></li>
       ${
         [...document.querySelectorAll("main h2")].map(h => `
           <li><a href="#${h.id}">${h.innerHTML}</a></li>
