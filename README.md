@@ -7,13 +7,20 @@ Przygotowane przez [**Daniela**](https://ato.yt) dla wszystkich użytkowników
 *Dodatkowe atrybucje i inspiracje podane przy odpowiednich pluginach.*
 
 ## Jak używać?
-Aby dodać plugin do swojego bloga, należy:
-1. Skopiować wybrany skrypt
-2. Przejść do ustawień bloga – **_Settings_**
-3. Kliknąć **_Header and footer directives_**
-4. W polu **_Head directive_** wkleić wybrany skrypt
-5. Dodać odpowiedni element do **_Footer directive_** –– *tylko jeśli plugin tego wymaga*
-6. **Sukces!** 🥳
+Aby dodać plugin do swojego bloga:
+1. Skopiuj wybrany skrypt
+2. Przejdź do ustawień bloga – **_Settings_**
+3. Kliknij **_Header and footer directives_**
+4. W polu **_Head directive_** wklej wybrany skrypt
+5. Dodaj odpowiedni element do **_Footer directive_** –– *tylko jeśli plugin tego wymaga*
+6. **Udało się!** 🥳
+
+## Podgląd i inspiracja
+Wszystkie znajdujące się tutaj pluginy są wykorzystywane na moim blogu [**ato.yt**](https://ato.yt).
+Możesz więć na nim podejrzeć, jak działają, zanim zdecydujesz wykorzystać u siebie.
+
+Jeśli będziesz potrzebować większej inspiracji względem tego, jak te elementy ostylować,
+to śmiało zajrzyj do kodu źródłowego mojego bloga :)
 
 <hr/>
 
@@ -132,6 +139,7 @@ div#table-of-contents {
   display: flex;
   align-items: center; /* ustawienie przycisku na środku spisu */
   gap: 1rem; /* odległość przycisku od spisu */
+  z-index: 1; /* by podnieść spis treści nad inne elementy (można zwiększyć) */
   transition: translate .2s ease-in-out; /* animuje wysuwanie i wsuwanie się spisu */
   
   &:not(.open) {
