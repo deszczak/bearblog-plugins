@@ -27,9 +27,13 @@
   )
 
   const btn = document.getElementById("toc-btn")
+  const isOpen = toc.classList.contains("open")
   btn.addEventListener("click", () => {
-    const isOpen = toc.classList.contains("open")
     toc.classList.toggle("open")
     btn.setAttribute("aria-expanded", String(!isOpen))
+  })
+
+  document.addEventListener("click", e => {
+    if (isOpen && !e.target.closest('#table-of-contents')) toc.classList.remove("open")
   })
 })()
