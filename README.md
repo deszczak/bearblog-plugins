@@ -30,9 +30,9 @@ Dodaje szacowany czas czytania do stron postów.
 
 ```html
 <!-- SKRYPT: szacowany czas czytania -->
-<script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.min.js" defer></script>
 <!-- lub -->
-<script data-wpm="420" src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.js" defer></script>
+<script data-wpm="420" src="https://deszczak.github.io/bearblog-plugins/plugins/reading-time.min.js" defer></script>
 ```
 *Zmodyfikowany kod autorstwa [Froodooo](https://github.com/Froodooo/bear-plugins)*
 
@@ -77,9 +77,9 @@ Dodaje funkcję dynamicznego przycisku powrotu do góry strony.
 <button id="go-top">up</button>
 
 <!-- SKRYPT: wróć do góry -->
-<script src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.js" defer></script>
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.min.js" defer></script>
 <!-- lub -->
-<script data-fraction="2" src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.js" defer></script>
+<script data-fraction="2" src="https://deszczak.github.io/bearblog-plugins/plugins/scroll-top.min.js" defer></script>
 ```
 
 <details>
@@ -126,7 +126,7 @@ Dodaje spis treści do stron postów na podstawie nagłówków drugiego stopnia.
 <div id="table-of-contents">up</div>
 
 <!-- SKRYPT: spis treści -->
-<script src="https://deszczak.github.io/bearblog-plugins/plugins/toc.js" defer></script>
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/toc.min.js" defer></script>
 ```
 
 ```css
