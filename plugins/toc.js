@@ -1,5 +1,5 @@
 (() => {
-  'use strict'
+  "use strict"
 
   const toc = document.getElementById("table-of-contents")
   const headers = [...document.querySelectorAll("main h2")]

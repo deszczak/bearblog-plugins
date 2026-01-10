@@ -1,5 +1,5 @@
 (() => {
-  'use strict'
+  "use strict"
 
   if (!document.body.classList.contains("post")) return
   const time = Math.ceil(

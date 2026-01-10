@@ -1,5 +1,5 @@
 (() => {
-  'use strict'
+  "use strict"
 
   const btn = document.getElementById("go-top")
   if (!btn) return
