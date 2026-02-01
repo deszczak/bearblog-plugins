@@ -4,6 +4,14 @@
   const toc = document.getElementById("table-of-contents")
   const headers = [...document.querySelectorAll("main h2")]
 
+  const textWithSup = (el) => {
+    const clone = el.cloneNode(true)
+    clone.querySelectorAll('sup').forEach(sup => sup.innerHTML = sup.textContent)
+    return Array.from(clone.childNodes)
+      .map(node => (node.nodeName === 'SUP' ? node.outerHTML : node.textContent))
+      .join('')
+  }
+
   if (!(toc && document.body.classList.contains("post") && headers.length)) return
   toc.innerHTML = `
     <div id="toc-content">
@@ -12,7 +20,7 @@
       <li><a href="#">Początek</a></li>
       ${
         [...document.querySelectorAll("main h2")].map(h => `
-          <li><a href="#${h.id}">${h.innerHTML}</a></li>
+          <li><a href="#${h.id}">${textWithSup(h)}</a></li>
         `).join("")
       }</ol>
     </div>
