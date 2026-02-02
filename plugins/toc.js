@@ -2,7 +2,7 @@
   "use strict"
 
   const toc = document.getElementById("table-of-contents")
-  const headers = [...document.querySelectorAll("main :is(h2,h3)")]
+  const headers = [...document.querySelectorAll("main > :is(h2,h3)")]
 
   const textWithSup = (el) => {
     const clone = el.cloneNode(true)
