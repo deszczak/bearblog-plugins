@@ -2,14 +2,14 @@
   "use strict"
 
   const toc = document.getElementById("table-of-contents")
-  const headers = [...document.querySelectorAll("main h2")]
+  const headers = [...document.querySelectorAll("main :is(h2,h3)")]
 
   const textWithSup = (el) => {
     const clone = el.cloneNode(true)
-    clone.querySelectorAll('sup').forEach(sup => sup.innerHTML = sup.textContent)
+    clone.querySelectorAll("sup").forEach(sup => sup.innerHTML = sup.textContent)
     return Array.from(clone.childNodes)
-      .map(node => (node.nodeName === 'SUP' ? node.outerHTML : node.textContent))
-      .join('')
+      .map(node => (node.nodeName === "SUP" ? node.outerHTML : node.textContent))
+      .join("")
   }
 
   if (!(toc && document.body.classList.contains("post") && headers.length)) return
@@ -19,8 +19,8 @@
       <ol>
       <li><a href="#">Początek</a></li>
       ${
-        [...document.querySelectorAll("main h2")].map(h => `
-          <li><a href="#${h.id}">${textWithSup(h)}</a></li>
+        headers.map(h => `
+          <li class=${h.tagName}><a href="#${h.id}">${textWithSup(h)}</a></li>
         `).join("")
       }</ol>
     </div>
@@ -42,6 +42,6 @@
   })
 
   document.addEventListener("click", e => {
-    if (!e.target.closest('#table-of-contents')) toc.classList.remove("open")
+    if (!e.target.closest("#table-of-contents")) toc.classList.remove("open")
   })
 })()

@@ -172,7 +172,9 @@ Ewentualnie można go dodawać ręcznie do wybranych postów, w których chcemy 
 `#table-of-contents` – cały kontener,  
 `#toc-btn` – przycisk,  
 `#toc-content` – spis z listą nagłówków, a w środku także:  
-&ensp; &ensp; `h2` – nagłówek "Spis treści" `ol` – lista nagłówków postu
+&ensp; &ensp; `h2` – nagłówek "Spis treści",  
+&ensp; &ensp; `ol` – lista nagłówków postu,  
+&ensp; &ensp; `li.h2` oraz `li.h3` – *klasy* elementów listy zbudowanych odpowiednio z nagłówków 2. i 3. stopnia.
 
 #### Funkcjonalność wyświetlania
 Gdy spis treści jest wysunięty, to cały kontener otrzymuje klasę `.open`. Można to wykorzystać
