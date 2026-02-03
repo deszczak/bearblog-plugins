@@ -182,3 +182,31 @@ na przykład do zmiany widoczności przycisku, gdy spis jest schowany:
 ```css
 div#table-of-contents:not(.open) #toc-btn { opacity: .5 }
 ```
+
+<hr/>
+
+### 4. Niestandardowy przycisk polubienia strony / postu
+Zmienia wygląd przycisku polubienia na **kciuk w górę** `like` lub **serce** `heart`.
+
+```html
+<!-- SKRYPT: przycisk polubienia -->
+<script src="https://deszczak.github.io/bearblog-plugins/plugins/like-btn.min.js" defer></script>
+<!-- lub -->
+<script data-size="32" data-type="heart" src="https://deszczak.github.io/bearblog-plugins/plugins/like-btn.min.js" defer></script>
+```
+
+#### Miejsce wyświetlenia
+Na każdej stronie, gdzie znajduje się przycisk polubienia.
+
+#### Kalibracja wyświetlania
+Opcjonalny atrybut skryptu `data-size` pozwala ustawić wielkość przycisku w pikselach. Domyślna wartość to **24**.  
+Atrybut `data-type` pozwala natomiast wybrać typ przycisku spośród dwóch: `like` (kciuk) lub `heart` (serce). Domyślna wartość to **like**.
+
+#### Stylowanie przycisku
+**Uwaga!** Przycisk polubienia, nawet ten standardowy jest możliwy do stylowania z użyciem selektorów:  
+`form#upvote-button` – pierwszy, główny kontener przycisku,  
+`form#upvote-button small` – drugi kontener znajdujący się wewnątrz powyższego,  
+`button.upvote-button` – faktyczny klikalny przycisk,  
+`button.upvode-button[title="Toasted"]` – kliknięty już przez użytkownika przycisk (polubienie),  
+`button.upvote-button svg` – *pierwsze dziecko przycisku* – grafika przycisku,  
+`small.upvote-count` – *dziecko powyższego przycisku i rodzeństwo svg* – liczba obecnych polubień na poście.
