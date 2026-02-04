@@ -5,7 +5,7 @@
   const headers = [...document.querySelectorAll("main > :is(h2,h3)")]
   const offset = +document.currentScript.getAttribute("data-offset") || 0
 
-  if (!btn || !headers.length) return
+  if (!btn || !headers.length || !document.body.classList.contains("post")) return
 
   const getNext = () => headers.find(h => h.offsetTop - offset > window.scrollY + 1)
   const update = () => btn.classList.toggle("active", !!getNext())
