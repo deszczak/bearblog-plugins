@@ -3,11 +3,10 @@
 
   const btn = document.getElementById("go-top")
   if (!btn) return
-  const fraction = document.currentScript.getAttribute("data-fraction")
+  const fraction = 5
   document.addEventListener("scroll", () => {
-    const scrolled = document.documentElement.scrollTop
-    const bodySize = document.body.scrollHeight
-    btn.classList.toggle("active", scrolled > bodySize / (fraction ?? 5))
+    const threshold = document.body.scrollHeight / fraction
+    btn.classList.toggle("active", window.scrollY > threshold)
   })
-  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }))
+  btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" })
 })()
