@@ -207,6 +207,6 @@ Atrybut `data-type` pozwala natomiast wybrać typ przycisku spośród dwóch: `l
 `form#upvote-button` – pierwszy, główny kontener przycisku,  
 `form#upvote-button small` – drugi kontener znajdujący się wewnątrz powyższego,  
 `button.upvote-button` – faktyczny klikalny przycisk,  
-`button.upvode-button[title="Toasted"]` – kliknięty już przez użytkownika przycisk (polubienie),  
+`button.upvote-button[title="Toasted"]` – kliknięty już przez użytkownika przycisk (polubienie),  
 `button.upvote-button svg` – *pierwsze dziecko przycisku* – grafika przycisku,  
 `small.upvote-count` – *dziecko powyższego przycisku i rodzeństwo svg* – liczba obecnych polubień na poście.
