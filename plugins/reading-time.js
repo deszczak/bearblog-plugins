@@ -6,6 +6,10 @@
     document.querySelector("main").innerText.match(/\S+/g).length
     / +document.currentScript.getAttribute("data-wpm") || 255
   )
+  console.log(time)
+  console.log(document.currentScript.getAttribute("data-wpm"))
+  console.log(document.querySelector("main").innerText.match(/\S+/g))
+  console.log(document.querySelector("main").innerText.match(/\S+/g).length)
   const lang = document.documentElement.lang ?? navigator.language
   const plForms = { one: "minuta", few: "minuty", many: "minut", other: "minuty" }
   const enForms = { one: "minute", few: "minutes", many: "minutes", other: "minutes" }
