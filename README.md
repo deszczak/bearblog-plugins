@@ -117,13 +117,14 @@ Domyślna wartość to: **5** – użytkownik musi zjechać o 1/5 długości str
 <hr/>
 
 ### 3. Spis treści
-Dodaje spis treści do stron postów na podstawie nagłówków drugiego stopnia.
+Dodaje spis treści do stron postów lub stron z klasą `toc` na podstawie
+nagłówków drugiego i trzeciego stopnia.
 
 > **Uwaga** – do poprawnego działania wymagany jest zarówno skrypt, jak i odpowiednie style.
 
 ```html
 <!-- ELEMENT: div do dodania w "Footer directive" -->
-<div id="table-of-contents">up</div>
+<div id="table-of-contents"></div>
 
 <!-- SKRYPT: spis treści -->
 <script src="https://deszczak.github.io/bearblog-plugins/plugins/toc.min.js" defer></script>
@@ -166,7 +167,9 @@ Po lewej stronie w pionowym środku na ekranach szerszych niż `768px`
 jeśli zastosuje się zmiany z komentarzy w stylach oraz zmiana minimalnego dozwolonego rozmiaru ekranu.
 
 Element `div` należy dodać do **Footer directive**, by zawsze był dostępny.
-Ewentualnie można go dodawać ręcznie do wybranych postów, w których chcemy mieć spis treści.  
+Ewentualnie można go dodawać ręcznie do wybranych stron, na których chcemy mieć spis treści.  
+
+Aby wyświetlić spis treści na stronie innej niż post, należy do [meta tagów](https://docs.bearblog.dev/post/) strony dodać `class_name: toc`.
 
 #### Selektory do stylowania
 `#table-of-contents` – cały kontener,  

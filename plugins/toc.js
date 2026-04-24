@@ -3,8 +3,11 @@
 
   const toc = document.getElementById("table-of-contents")
   const headers = [...document.querySelectorAll("main > :is(h2,h3)")]
+  const bodyClasses = document.body.classList
 
-  if (!toc || !headers.length || !document.body.classList.contains("post")) return
+  if (!toc || !headers.length || ![...bodyClasses].some(c => ["post","toc"].includes(c))) return
+
+  const main = document.querySelector("main")
 
   const listItems = headers.map(h =>
     `<li class=${h.tagName}><a href="#${h.id}">${h.innerHTML.replace(/<sup.*?>.*?<\/sup>/g, s => s.replace(/<[^>]*>/g, ""))}</a></li>`
@@ -21,9 +24,7 @@
       </svg> <!-- icon by svgrepo.com/author/phosphor -->
     </button>`
 
-  document.querySelector("main").insertBefore(
-    toc, document.querySelector("main p")
-  )
+  main.insertBefore(toc, bodyClasses.contains("post") ? main.querySelector("p") : main.firstChild)
 
   const toggle = () => {
     const open = toc.classList.toggle("open")
