@@ -24,5 +24,6 @@
   const toggle = (like = false) => upvoteBtn.querySelector("svg").outerHTML = html(like || upvoteBtn.disabled)
 
   toggle()
+  setTimeout(() => toggle, 1000)
   upvoteBtn.addEventListener("click", () => toggle(true))
 })()
