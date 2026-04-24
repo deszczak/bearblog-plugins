@@ -8,6 +8,7 @@
   if (!toc || !headers.length || ![...bodyClasses].some(c => ["post","toc"].includes(c))) return
 
   const main = document.querySelector("main")
+  const lang = document.documentElement.lang ?? navigator.language
 
   const listItems = headers.map(h =>
     `<li class=${h.tagName}><a href="#${h.id}">${h.innerHTML.replace(/<sup.*?>.*?<\/sup>/g, s => s.replace(/<[^>]*>/g, ""))}</a></li>`
@@ -15,8 +16,8 @@
 
   toc.innerHTML = `
     <div id="toc-content">
-      <h2>Spis treści</h2>
-      <ol><li><a href="#">Początek</a></li>${listItems}</ol>
+      <h2>${lang === 'pl' ? 'Spis treści' : 'Table of contents'}</h2>
+      <ol><li><a href="#">${lang === 'pl' ? 'Początek' : 'Beginning'}</a></li>${listItems}</ol>
     </div>
     <button id="toc-btn" aria-controls="toc-content" title="Spis treści">
       <svg fill="currentColor" viewBox="0 0 256 256">
