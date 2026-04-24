@@ -21,4 +21,5 @@
   }
 
   upvoteBtn.addEventListener("click", () => toggle)
+  toggle()
 })()
