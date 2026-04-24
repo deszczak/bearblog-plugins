@@ -24,6 +24,7 @@
   const toggle = (like = false) => upvoteBtn.querySelector("svg").outerHTML = html(like || upvoteBtn.disabled)
 
   toggle()
-  setTimeout(() => toggle, 1000)
   upvoteBtn.addEventListener("click", () => toggle(true))
+  const obs = new MutationObserver(ms => ms.forEach(m => toggle(m.target.disabled)))
+  obs.observe(upvoteBtn, { attributes: true, attributeFilter: ["disabled"] })
 })()
