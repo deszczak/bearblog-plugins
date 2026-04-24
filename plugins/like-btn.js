@@ -20,6 +20,7 @@
     </svg>`
   }
 
-  const obs = new MutationObserver(ms => ms.forEach(m => toggle()))
+  const obs = new MutationObserver(ms => ms.forEach(() => toggle()))
   obs.observe(upvoteBtn, { attributes: true, attributeFilter: ["disabled"] })
+  toggle()
 })()
