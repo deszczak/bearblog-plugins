@@ -2,7 +2,8 @@
   "use strict"
 
   const upvoteBtn = document.querySelector("button.upvote-button")
-  if (!upvoteBtn.querySelector("svg")) return
+  const btnSvg = upvoteBtn.querySelector("svg")
+  if (!btnSvg) return
 
   const type = document.currentScript.getAttribute("data-type") || "like"
   const size = +document.currentScript.getAttribute("data-size") || 24
@@ -14,7 +15,7 @@
   }
 
   const toggle = () => {
-    upvoteBtn.querySelector("svg").outerHTML = `
+    btnSvg.outerHTML = `
       <svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="currentColor">
         ${upvoteBtn.disabled ? (paths[type+"_filled"] || paths.like_filled) : (paths[type] || paths.like)}
       </svg>
@@ -22,5 +23,5 @@
   }
 
   const obs = new MutationObserver(ms => ms.forEach(toggle))
-  obs.observe(upvoteBtn.querySelector("svg"), { attributes: true, childList: true, subtree: true })
+  obs.observe(btnSvg, { attributes: true, childList: true, subtree: true })
 })()
