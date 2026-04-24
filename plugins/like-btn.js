@@ -20,6 +20,6 @@
     </svg>`
   }
 
-  upvoteBtn.addEventListener("click", () => toggle)
-  toggle()
+  const obs = new MutationObserver(ms => ms.forEach(m => toggle()))
+  obs.observe(upvoteBtn, { attributes: true, attributeFilter: ["disabled"] })
 })()
