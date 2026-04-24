@@ -21,4 +21,5 @@
 
   const obs = new MutationObserver(ms => ms.forEach(toggle))
   obs.observe(btnSvg.closest("button"), { attributes: true, attributeFilter: ["disabled"] })
+  toggle()
 })()
