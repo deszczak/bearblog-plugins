@@ -26,5 +26,5 @@
     ms.forEach(m => toggle(m.target.disabled))
   )
   obs.observe(btn, { attributes: true, attributeFilter: ["disabled"] })
-  toggle()
+  toggle(btn.disabled)
 })()
