@@ -202,8 +202,9 @@ Zmienia wygląd przycisku polubienia na **kciuk w górę** `like` lub **serce** 
 Na każdej stronie, gdzie znajduje się przycisk polubienia.
 
 #### Kalibracja wyświetlania
-Opcjonalny atrybut skryptu `data-size` pozwala ustawić wielkość przycisku w pikselach. Domyślna wartość to **24**.  
-Atrybut `data-type` pozwala natomiast wybrać typ przycisku spośród dwóch: `like` (kciuk) lub `heart` (serce). Domyślna wartość to **like**.
+Opcjonalny atrybut skryptu `data-size` pozwala ustawić wielkość przycisku w pikselach. Domyślna wartość to **32**.  
+Atrybut `data-type` pozwala natomiast wybrać typ przycisku spośród dwóch: `like` (kciuk) lub `heart` (serce).
+Domyślna wartość to **like**.
 
 #### Stylowanie przycisku
 **Uwaga!** Przycisk polubienia, nawet ten standardowy jest możliwy do stylowania z użyciem selektorów:  
@@ -211,5 +212,5 @@ Atrybut `data-type` pozwala natomiast wybrać typ przycisku spośród dwóch: `l
 `form#upvote-button small` – drugi kontener znajdujący się wewnątrz powyższego,  
 `button.upvote-button` – faktyczny klikalny przycisk,  
 `button.upvote-button[title="Toasted"]` – kliknięty już przez użytkownika przycisk (polubienie),  
-`button.upvote-button svg` – *pierwsze dziecko przycisku* – grafika przycisku,  
-`small.upvote-count` – *dziecko powyższego przycisku i rodzeństwo svg* – liczba obecnych polubień na poście.
+`button.upvote-button svg` – _pierwsze dziecko przycisku_ – grafika przycisku,  
+`small.upvote-count` – _dziecko powyższego przycisku i rodzeństwo svg_ – liczba obecnych polubień na poście.
