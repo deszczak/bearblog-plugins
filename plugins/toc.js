@@ -37,5 +37,5 @@
     toggle()
   }
 
-  document.onclick = (e) => e.target.closest("#table-of-contents") || toggle()
+  document.onclick = (e) => e.target.closest("#table-of-contents") || (toc.classList.contains("open") && toggle())
 })()
