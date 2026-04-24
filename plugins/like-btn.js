@@ -21,7 +21,6 @@
     `
   }
 
-  toggle()
-  const obs = new MutationObserver(ms => ms.forEach(() => toggle()))
-  obs.observe(upvoteBtn.querySelector("svg"), { attributes: true, attributeFilter: ["disabled"] })
+  const obs = new MutationObserver(ms => ms.forEach(toggle))
+  obs.observe(upvoteBtn.querySelector("svg"), { attributes: true, childList: true, subtree: true })
 })()
